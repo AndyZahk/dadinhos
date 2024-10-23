@@ -1,3 +1,5 @@
+import { getCSS, tickConfig } from "./common.js"
+
 async function quantidadeUsuariosPorRede() {
     const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json';
     const res = await fetch (url)
@@ -34,7 +36,13 @@ async function quantidadeUsuariosPorRede() {
             }
         },
         yaxis: {
-            tickfont:
+            tickfont: tickConfig,
+            title: {
+                text: 'Bilões de usuários ativos',
+                font: {
+                    color: getCSS('--secondary-color')
+                }
+            }
         }
     }
     
